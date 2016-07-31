@@ -5,7 +5,7 @@
 	<artifactId>SimpleRESTService</artifactId>
 	<packaging>war</packaging>
 	<version>1.0.0.1-SNAPSHOT</version>
-	<name>N26 Coding Challenge</name>
+	<name>Simple REST Web Service</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
@@ -150,8 +150,8 @@
 					<goalPrefix>glassfish</goalPrefix>
 					<app>target/${artifactId}-${version}.${packaging}</app>
 					<port>8989</port>
-					<contextRoot>N26Test</contextRoot>
-					<name>N26Test</name>
+					<contextRoot>SimpleRESTService</contextRoot>
+					<name>SimpleRESTService</name>
 				</configuration>
 				<executions>
 					<execution>
