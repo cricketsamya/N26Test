@@ -10,8 +10,7 @@ import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
 /**
- * A singleton class used to store transaction, this class can be replaced with
- * persistence layer if required.
+ * Extended Application class.
  * 
  * @author S.Kulkarni
  * 

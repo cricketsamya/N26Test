@@ -45,6 +45,19 @@ public class TransactionHandler {
 	@EJB
 	private TransactionService transactionService;
 
+	/**
+	 * A method to store transaction based on id and transation data. URI :
+	 * /rest/transactionservice/transaction/{id}{"amount":20000,"type":"cars",
+	 * "parent_id",10}
+	 * 
+	 * @param id
+	 *            id to be stored
+	 * @param transaction
+	 *            transaction to be stored
+	 * @return returns JSON with Status data
+	 * 
+	 * @changed S.Kulkarni 29.07.2016 - created.
+	 */
 	@PUT
 	@Path("/transaction/{id}")
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -55,6 +68,17 @@ public class TransactionHandler {
 		return Response.status(Status.OK).entity(response).build();
 	}
 
+	/**
+	 * A method to retrieve transaction based on id. URI :
+	 * /rest/transactionservice/transaction/{id}
+	 * 
+	 * @param id
+	 *            id to be searched
+	 * @return returns JSON with Transaction data, else response string with
+	 *         error
+	 * 
+	 * @changed S.Kulkarni 29.07.2016 - created.
+	 */
 	@GET
 	@Path("/transaction/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -71,6 +95,17 @@ public class TransactionHandler {
 		return Response.status(Status.OK).entity(response).build();
 	}
 
+	/**
+	 * A method to retrieve transactions based on types. URI :
+	 * /rest/transactionservice/types/{type}
+	 * 
+	 * @param type
+	 *            type to be searched
+	 * @return returns JSON with List of Transaction ids, else response string
+	 *         with error
+	 * 
+	 * @changed S.Kulkarni 29.07.2016 - created.
+	 */
 	@GET
 	@Path("/types/{type}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -87,6 +122,16 @@ public class TransactionHandler {
 		return Response.status(Status.OK).entity(response).build();
 	}
 
+	/**
+	 * A method to retrieve transactions sum based on parent Id. URI :
+	 * /rest/transactionservice/sum/{id}
+	 * 
+	 * @param id
+	 *            id to be searched
+	 * @return returns JSON with SUM, else response string with error
+	 * 
+	 * @changed S.Kulkarni 29.07.2016 - created.
+	 */
 	@GET
 	@Path("/sum/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
