@@ -126,7 +126,7 @@ public class TransactionServiceTest {
 	public void testGetSumOfTransactionsBasedOnParentId() {
 		CalculationData response = null;
 		try {
-			response = transactionService.getTransactionSumByParentId(10);
+			response = transactionService.getTransactionSumByParentId(11);
 			assertNotNull(response);
 			assertEquals(25000D, response.getSum(), 0.0);
 		} catch (TransactionNotFoundException e) {
@@ -186,7 +186,6 @@ public class TransactionServiceTest {
 		List<Integer> response = null;
 		try {
 			response = transactionService.getTransactionsByType("");
-
 		} catch (Exception e) {
 			assertTrue(e.getCause() instanceof IllegalArgumentException);
 			assertNull(response);
@@ -202,7 +201,7 @@ public class TransactionServiceTest {
 	public void testGetTransactionsBasedOnId() {
 		Transaction response = null;
 		try {
-			response = transactionService.getTransactionById(10);
+			response = transactionService.getTransactionById(11);
 			assertNotNull(response);
 			assertEquals(10000D, response.getAmount(), 0.0);
 			assertEquals("cars", response.getType());

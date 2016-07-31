@@ -27,11 +27,11 @@ public class Transaction {
 	private long parentId;
 
 	public Transaction(double amount, String type) {
-		if (type == null || type.length() == 0) {
+		if (type == null || type.trim().length() == 0) {
 			throw new IllegalArgumentException("type cannot be empty or null");
 		}
 		this.amount = amount;
-		this.type = type;
+		this.type = type.trim();
 	}
 
 	public Transaction(double amount, String type, long parentId) {

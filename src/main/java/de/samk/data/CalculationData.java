@@ -20,11 +20,6 @@ public class CalculationData {
 	public CalculationData() {
 	}
 
-	public CalculationData(Double sum) {
-		super();
-		this.sum = sum;
-	}
-
 	/**
 	 * @changed S.Kulkarni 29.07.2016 - created.
 	 */

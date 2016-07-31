@@ -98,13 +98,13 @@ public class MemStorageBean {
 	 * @changed S.Kulkarni 30.07.2016 - created.
 	 */
 	public List<Integer> getTransactionsByType(String type) {
-		if (type == null || type.length() < 0) {
+		if (type == null || type.length() == 0) {
 			throw new IllegalArgumentException("type can not be null or empty");
 		}
 		List<Integer> listOfTransactions = new ArrayList<Integer>();
 		for (Integer transactionId : transactions.keySet()) {
 			Transaction transaction = transactions.get(transactionId);
-			if (transaction.getType().equals(type)) {
+			if (transaction.getType().equals(type.trim())) {
 				listOfTransactions.add(transactionId);
 			}
 		}

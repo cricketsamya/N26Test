@@ -81,10 +81,10 @@ public class TransactionServiceBean implements TransactionService {
 
 	@Override
 	public List<Integer> getTransactionsByType(String type) throws TransactionNotFoundException {
-		if (type == null || type.length() < 0) {
+		if (type == null || type.length() == 0) {
 			throw new IllegalArgumentException("type can not be null or empty");
 		}
-		List<Integer> listOfTransactions = ms.getTransactionsByType(type);
+		List<Integer> listOfTransactions = ms.getTransactionsByType(type.trim());
 		if (listOfTransactions != null && listOfTransactions.size() > 0) {
 			return listOfTransactions;
 		}

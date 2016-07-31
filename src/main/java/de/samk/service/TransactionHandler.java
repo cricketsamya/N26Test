@@ -59,13 +59,13 @@ public class TransactionHandler {
 	@Path("/transaction/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getTransactionById(@PathParam("id") int id) {
-		// LOGGER.log(Level.INFO, "getTransactionById called");
+		LOGGER.log(Level.INFO, "getTransactionById called");
 		Transaction transac;
 		try {
 			transac = transactionService.getTransactionById(id);
 			return Response.status(Status.OK).entity(transac).build();
 		} catch (TransactionNotFoundException e) {
-			// LOGGER.log(Level.WARNING, "TransactionNotFoundException", e);
+			LOGGER.log(Level.WARNING, "TransactionNotFoundException", e);
 		}
 		ResponseState response = new ResponseState("Transaction not found");
 		return Response.status(Status.OK).entity(response).build();
@@ -75,13 +75,13 @@ public class TransactionHandler {
 	@Path("/types/{type}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getTransactionsByType(@PathParam("type") String type) {
-		// LOGGER.log(Level.INFO, "getTransactionsByType called");
+		LOGGER.log(Level.INFO, "getTransactionsByType called");
 		List<Integer> transactions;
 		try {
 			transactions = transactionService.getTransactionsByType(type);
 			return Response.status(Status.OK).entity(transactions).build();
 		} catch (TransactionNotFoundException e) {
-			// LOGGER.log(Level.WARNING, "TransactionNotFoundException", e);
+			LOGGER.log(Level.WARNING, "TransactionNotFoundException", e);
 		}
 		ResponseState response = new ResponseState("Type not found");
 		return Response.status(Status.OK).entity(response).build();
@@ -91,12 +91,12 @@ public class TransactionHandler {
 	@Path("/sum/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getTransactionsSum(@PathParam("id") int id) {
-		// LOGGER.log(Level.INFO, "getTransactionsSum called");
+		LOGGER.log(Level.INFO, "getTransactionsSum called");
 		try {
 			CalculationData sum = transactionService.getTransactionSumByParentId(id);
 			return Response.status(Status.OK).entity(sum).build();
 		} catch (TransactionNotFoundException e) {
-			// LOGGER.log(Level.WARNING, "TransactionNotFoundException", e);
+			LOGGER.log(Level.WARNING, "TransactionNotFoundException", e);
 		}
 		ResponseState response = new ResponseState("Transaction not found");
 		return Response.status(Status.OK).entity(response).build();
