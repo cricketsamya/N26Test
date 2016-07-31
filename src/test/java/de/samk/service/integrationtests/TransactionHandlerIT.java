@@ -32,7 +32,7 @@ public class TransactionHandlerIT {
 	public void setUp() {
 		RestAssured.baseURI = "http://localhost";
 		RestAssured.port = 8989;
-		RestAssured.basePath = "/N26Test";
+		RestAssured.basePath = "/SimpleRESTService";
 	}
 
 	@Test
